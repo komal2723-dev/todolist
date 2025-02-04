@@ -14,7 +14,6 @@
             font-family: "poppins", "sens-serif";
             margin: 0;
             padding: 0;
-
         }
 
         body {
@@ -25,24 +24,21 @@
             max-width: 100vw;
         }
 
-
         .wrapper {
-            background: #3c4a5d;
-            display: flex;
-            flex-direction: column;
             align-items: center;
-            position: absolute;
-            top: 15%;
-            left: 35%;
-            height: auto;
-            width: 40%;
+            background: #3c4a5d;
             border: 1px solid #3c4a5d;
+            border-radius: 15px;
             box-shadow: 0 0 1rem #526175, inset 0 0 1rem #3c4a5d;
             box-shadow: 0 0 2rem #070b10, ;
-            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            left: 35%;
+            position: absolute;
+            top: 15%;
+            width: 40%;
         }
-
-
         .form-wrapper {
             align-items: center;
             border-top: .1rem solid whitesmoke;
@@ -71,7 +67,6 @@
             align-items: center;
             color:white;
             display: flex;
-            /* flex-direction: column; */
             font-size: 1.2rem;
             justify-content: flex-start;
             margin-top: -8px;
@@ -86,8 +81,8 @@
         .Signup-link:hover{
     
             color: rgb(219, 219, 22);
-            font-size: 1.3rem;
             text-shadow: 0 0 1rem yellow;
+            font-size: 1.3rem;
            
         }
         form label{
@@ -118,14 +113,13 @@
 
        @media screen and (max-width: 366px ) {
            div .link{
-            flex-direction: column;
-            justify-content:center;
+               flex-direction: column;
+               justify-content:center;
             
             
             }
             .Signup-link{
-                margin-left: -.8rem;
-                padding-left: -.9rem;
+                padding-left: -3rem;
             }
            }
     </style>
@@ -153,15 +147,11 @@
                         {{item.errors|striptags}}
                     </div>
                     {% endfor %}
-                    <button type="submit" class="btn btn-dark form-control fs-5 border border-white">Login</button>
+                    <button type="submit" class="btn btn-dark form-control fs-5 border border-white">Send OTP</button>
                     <hr>
                     <div class="link">
-                    <p class="">Don't have an account?</p>
-                    <a href="{% url 'signup' %}" class="Signup-link ms-4">Register here!</a>
-                    </div>
-                    <div class="link">
-                    <p class="">Forgot your password!</p>
-                    <a href="{% url 'send_otp' %}" class="Signup-link ms-4 ps-1">Reset</a>
+                    <p class="">Remembered Password?</p>
+                    <a href="{% url 'login' %}" class="Signup-link ms-4 ps-1">login</a>
                 </div>
                 </form>
             </div>

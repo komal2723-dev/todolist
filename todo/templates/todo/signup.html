@@ -32,8 +32,8 @@
             position: absolute;
             top: 5%;
             left: 35%;
-            height: 90%;
-            width: 30%;
+            height: auto;
+            width: 40%;
             border: 1px solid #3c4a5d;
             box-shadow: 0 0 1rem #526175, inset 0 0 1rem #3c4a5d;
             box-shadow: 0 0 2rem #070b10, ;
@@ -91,24 +91,53 @@
             color: rgba(238, 231, 231, 0.671);
         }
        
+        @media screen and (max-width: 1042px ) {
+            .wrapper{
+                width:40%;
+                left: 30%;
+            }}
+        @media screen and (max-width: 787px ) {
+            .wrapper{
+                width:50%;
+                left: 25%;
+            }}
+        @media screen and (max-width: 533px ) {
+            .wrapper{
+                width:80%;
+                left: 10%;
+            }}
+        @media screen and (max-width: 277px ) {
+            div .link{
+                font-size: 0.8rem;
+            }
+            }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="wrapper">
-            <h1 class="signup-heading">SignUp</h1>
+            <h1 class="signup-heading">Register Here!</h1>
             <div class="form-wrapper">
                 <hr style="color: white;">
+                {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger alert-dismissible fade show w-100" role="alert">
+                        {{message}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+                {% endfor %}    
+                {% endif %}
                 <form action="" method="post" class="css-form">
                     {% csrf_token %}
                     {% for item in form %}
                     <div class="mb-3">
                         {{item.label_tag}}
                         {{item}}
-                        {{item.errors|striptags}}
+                        <div class="text-danger">{{item.errors|striptags}}</div>
+                        
                     </div>
                     {% endfor %}
-                    <button type="submit" class="btn btn-secondary form-control">SignUp</button>
+                    <button type="submit" class="btn btn-dark form-control border border-white fs-5">Register</button>
                     <hr>
                     <div class="link">
                     <p class="">Already have an account?</p>
