@@ -45,4 +45,5 @@ The **To-Do List Application** is built using **Django**, a high-level Python we
 ![7](https://github.com/user-attachments/assets/909b028d-bc79-47d7-b1ea-b5f22f88d816)
 
 > **To change directory:** cd directory_name/
+
 > **To run django project :** py manage.py runserver (for windows) and python manage.py runserver (for linux)
